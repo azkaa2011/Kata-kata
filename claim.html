@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;450;650&display=swap" rel="stylesheet"><meta name="theme-color" content="#252525">
+   
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Animasi Typing</title>
+  <style>
+    body {
+      pointer-events: none;
+      user-select: none;
+      display: flex;
+      justify-content: left;
+      align-items: center;
+      overflow: hidden;
+      min-height: 100vh;
+      background-color: #252525;
+      font-family: Arial, sans-serif;
+      margin: 0;
+    }
+
+    
+
+    .typing-text {
+      margin: 0 0 125px 0;
+      font-size: 1.9rem;
+      color: #ffd170;
+      font-weight: bold;
+      font-family: "Roboto", sans-serif;
+      border-right: 0px solid #3498db;
+      overflow: hidden;
+      padding: 20px;
+    }
+  </style>
+</head>
+<body>
+ 
+    <p class="typing-text" id="typing-text"></p>
+  <script>
+    const text = "nikmatilah masa muda mu dengan ceria dan penuh cerita, bukan terluka karena cinta.";
+    const typingText = document.getElementById("typing-text");
+    let index = 0;
+
+    function typeEffect() {
+      if (index < text.length) {
+        typingText.textContent += text.charAt(index);
+        index++;
+        setTimeout(typeEffect, 50); // Kecepatan mengetik (50ms per karakter)
+      }
+    }
+
+    typeEffect();
+  </script>
+</body>
+</html>
